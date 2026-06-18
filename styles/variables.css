@@ -1,1 +1,32 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --page-main-font: 'Inter-Variable', sans-serif;
+  --second-font-family: 'PressStart2P', sans-serif;
+  --page-main-background: repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, rgb(255 255 255 / 0) 2px 4px), repeating-linear-gradient(to right, #d3d3d3 0px 2px, rgb(255 255 255 / 0) 2px 4px),
+    linear-gradient(to bottom,#e7e7e7 0.01%, #1a1a1a 100%);
+  --page-main-wght: 410;
+  --page-main-font-size: 18px;
+  --accent-color-text: rgba(255, 255, 255, 1);
+  --accent-color: rgba(0, 0, 0, 1);
+
+  --block-size: clamp(320px, 100%, 700px);
+  --block-border-color: rgba(0, 0, 0, 1);
+  --block-background-color: rgba(255, 255, 255, 1);
+  --block-title-font-size: 18px;
+  --block-title-font-weght: 715;
+
+  --header-padding: clamp(122px, 122px + (100vw - 327px) * 0.008, 130px);
+  --header-font-weight: 400;
+  --header-logo-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
+  --header-title-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
+
+  --watermark-stroke-color: rgba(255, 255, 255, 1);
+
+  --button-border-color: rgba(0, 0, 0, 1);
+  --button-font-size: 14px;
+  --button-font-weight: 400;
+
+  --animation-fill-color: rgba(255, 0, 0, 1);
+  --heart-contour-color: black;
+  --heart-body-color: rgba(255, 0, 0, 1);
+}
