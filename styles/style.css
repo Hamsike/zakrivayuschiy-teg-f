@@ -35,7 +35,7 @@
   margin: 52px auto 0px;
   border: 2px solid var(--block-border-color);
 
-  @media (width <=375px) {
+  @media (width <= 375px) {
     margin-top: 50px;
   }
 }
@@ -94,14 +94,15 @@
   text-transform: uppercase;
   mix-blend-mode: hard-light;
   opacity: 50%;
-  text-shadow: -1px -1px var(--watermark-stroke-color),
-  -1px 0 var(--watermark-stroke-color),
-  -1px 1px var(--watermark-stroke-color),
-  0 -1px var(--watermark-stroke-color),
-  0 1px var(--watermark-stroke-color),
-  1px -1px var(--watermark-stroke-color),
-  1px 0 var(--watermark-stroke-color),
-  1px 1px var(--watermark-stroke-color);
+  text-shadow: 
+    -1px -1px var(--watermark-stroke-color),
+    -1px 0 var(--watermark-stroke-color),
+    -1px 1px var(--watermark-stroke-color),
+    0 -1px var(--watermark-stroke-color),
+    0 1px var(--watermark-stroke-color),
+    1px -1px var(--watermark-stroke-color),
+    1px 0 var(--watermark-stroke-color),
+    1px 1px var(--watermark-stroke-color);
 
   @supports ((-webkit-text-stroke: 1px var(--watermark-stroke-color)) or (text-stroke: 1px var(--watermark-stroke-color))) {
     -webkit-text-stroke: 1px var(--watermark-stroke-color);
@@ -146,7 +147,8 @@ svg {
   background-color: transparent;
   outline: 0;
   border: none;
-  transition: outline 0.3s ease;
+  cursor: pointer;
+  transition: outline var(--animation-duration) ease;
 }
 
 .card__icon-button:focus {
@@ -162,7 +164,8 @@ svg {
   inline-size: 130px;
 }
 
-.button__text, .text__button {
+.button__text,
+.text__button {
   position: relative;
   z-index: 2;
   font-family: var(--second-font-family);
@@ -183,7 +186,7 @@ svg {
   border: 2px solid var(--button-border-color);
   outline: none;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow var(--animation-duration) ease;
 }
 
 .button::after {
@@ -210,24 +213,25 @@ svg {
 }
 
 .like-icon {
+  position: relative;
   display: block;
   width: 100%;
-
+  z-index: 1000;
 }
 
 .like-icon .contour {
   fill: var(--heart-contour-color);
-  transition: fill 0.3s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-transition-easing);
 }
 
 .like-icon .main-body {
   fill: transparent;
-  transition: fill 0.3s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-transition-easing);
 }
 
 .like-icon .core {
   fill: transparent;
-  transition: fill 0.3s 0.03s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-delay-core) var(--fill-transition-easing);
 }
 
 .like-icon .sparks {
@@ -237,47 +241,47 @@ svg {
 
 .like-icon:hover .main-body {
   fill: var(--heart-contour-color);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-delay-main-body) var(--fill-transition-easing);
 }
 
 .like-icon:hover .core {
   fill: var(--heart-contour-color);
-  transition: fill 0.3s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-transition-easing);
 }
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-transition-easing);
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-delay-main-body) var(--fill-transition-easing);
 }
 
+/* Залитое сердечко */
 .like-icon.is-liked .core {
   fill: var(--heart-body-color);
-  transition: fill 0.3s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-transition-easing);
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-body-color);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-delay-main-body) var(--fill-transition-easing);
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-body-color);
-  transition: fill 0.3s 0.06s linear;
+  transition: fill var(--fill-transition-duration) var(--fill-delay-contour) var(--fill-transition-easing);
 }
 
 .like-icon.is-liked .heart {
-  animation: heart 0.3s 0.1s ease-in;
-  transform-origin: center
+  animation: heart var(--animation-duration) var(--heart-scale-delay) var(--animation-easing);
+  transform-origin: center;
 }
 
-
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in;
+  animation: sparks var(--animation-duration) var(--sparks-opacity-delay) var(--animation-easing);
 }
 
 .filter__grayscale {
@@ -289,7 +293,7 @@ svg {
 }
 
 .filter__sepia {
-  filter: sepia(0.8)
+  filter: sepia(0.8);
 }
 
 .filter__invert {
@@ -297,7 +301,7 @@ svg {
 }
 
 .filter__contrast {
-  filter: contrast(250%)
+  filter: contrast(250%);
 }
 
 .filter__blur {
@@ -309,19 +313,20 @@ svg {
 }
 
 .save {
-   margin: 50px auto 100px;
-   inline-size: 335px;
-   block-size: 55px;
-   gap: 8px;
+  margin: 50px auto 100px;
+  inline-size: var(--save-button-width);
+  block-size: var(--save-button-height);
+  gap: 8px;
 
-   @media (width <= 375px) {
+  @media (width <= 375px) {
     flex-direction: column;
-    inline-size: 335px;
-    block-size: 55px;
-   }
+    inline-size: var(--save-button-width);
+    block-size: var(--save-button-height);
+  }
 }
 
-.floppy, .floppy__dialog {
+.floppy,
+.floppy__dialog {
   position: relative;
   color: var(--accent-color-text);
   mix-blend-mode: difference;
@@ -329,12 +334,11 @@ svg {
 }
 
 .floppy {
-  width: 21px;
-  @media (width <=375px) {
-    width: 28px;
+  width: var(--floppy-icon-size);
+  @media (width <= 375px) {
+    width: var(--floppy-icon-size-small);
   }
 }
-
 
 .dialog:not([open]) {
   pointer-events: none;
@@ -347,15 +351,15 @@ svg {
   display: grid;
   gap: 30px;
   max-inline-size: min-content;
-  padding-inline: 30px;
+  padding-inline: var(--dialog-padding-inline);
   padding-block: 30px;
   justify-content: center;
   outline: 2px solid var(--accent-color);
-  border:0;
-  transition: opacity 0.3s ease-in-out;
+  border: 0;
+  transition: opacity var(--animation-duration) ease-in-out;
 
   @media (width <= 375px) {
-    padding-inline: 40px;
+    padding-inline: var(--dialog-padding-inline-small);
   }
 }
 
@@ -381,10 +385,10 @@ svg {
 }
 
 .dialog__button {
-  inline-size: 293px;
+  inline-size: var(--dialog-button-width);
   block-size: 38px;
 
-  @media (width <=375px) {
-    inline-size: 261px;
+  @media (width <= 375px) {
+    inline-size: var(--dialog-button-width-small);
   }
 }
