@@ -321,10 +321,16 @@
   width: var(--floppy-icon-size, 21px);
 }
 
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
+
 .dialog[open] {
+  position: fixed;
+  inset: 0;
   display: grid;
   max-inline-size: min-content;
-  max-block-size: min-content;
   padding-inline: var(--dialog-padding-inline, 30px);
   padding-block: 30px;
   justify-content: center;
