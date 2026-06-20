@@ -9,11 +9,12 @@
   --color-bg-gradient-end: #1a1a1a;
 
   --page-main-font: 'Inter-Variable', sans-serif;
-  --second-font-family: 'PressStart2P', sans-serif;
+  --accent-font-family: 'PressStart2P', sans-serif;
   --page-main-wght: 410;
   --page-main-font-size: 18px;
   --header-font-weight: 400;
   --button-font-weight: 400;
+  --watermark-font-weight: 400;
   --block-title-font-weght: 715;
 
   --block-size: clamp(320px, 100%, 700px);
@@ -25,6 +26,8 @@
   
   --save-button-width: 335px;
   --save-button-height: 55px;
+  --save-button-width-small: 306px;
+  --save-button-height-small: 84px;
   --floppy-icon-size: 21px;
   --floppy-icon-size-small: 28px;
   --dialog-button-width: 293px;
