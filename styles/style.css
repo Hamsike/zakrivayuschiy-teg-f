@@ -324,8 +324,8 @@
 .dialog[open] { 
   display: grid;
   max-inline-size: min-content; 
-  max-block-size: 191px;
-  overflow: auto;
+  position: fixed;
+  inset: 0;
   padding-inline: var(--dialog-padding-inline, 30px); 
   padding-block: 30px; 
   justify-content: center; 
