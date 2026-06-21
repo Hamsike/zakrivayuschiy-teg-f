@@ -321,23 +321,16 @@
   width: var(--floppy-icon-size, 21px); 
 }
 
-.dialog:not([open]) {
-  pointer-events: none;
-  opacity: 0;
-  position: fixed;
-  inset: 0;
-}
- 
-.dialog { 
-  display: grid; 
+.dialog[open] { 
+  display: grid;
   max-inline-size: min-content; 
   padding-inline: var(--dialog-padding-inline, 30px); 
   padding-block: 30px; 
   justify-content: center; 
   align-items: center;
   outline: 2px solid var(--accent-color, #000); 
-  border: 0; 
-  transition: opacity var(--animation-duration, 0.3s) ease-in-out; 
+  border: 0;
+  animation: dialog-fade-in var(--animation-duration, 0.3s) ease-in-out; 
 } 
  
 .dialog[open]::backdrop { 
