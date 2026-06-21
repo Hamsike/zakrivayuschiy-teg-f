@@ -334,6 +334,7 @@
   padding-inline: var(--dialog-padding-inline, 30px); 
   padding-block: 30px; 
   justify-content: center; 
+  align-items: center;
   outline: 2px solid var(--accent-color, #000); 
   border: 0; 
   transition: opacity var(--animation-duration, 0.3s) ease-in-out; 
@@ -346,8 +347,11 @@
  
 .form__dialog { 
   display: flex; 
-  flex-direction: column; 
-  gap: 30px; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-block-size: 100%;
 } 
  
 .dialog__section { 
