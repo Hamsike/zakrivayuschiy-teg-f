@@ -351,7 +351,6 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  max-block-size: 100%;
 } 
  
 .dialog__section { 
